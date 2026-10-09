@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resumen interactivo de la Sección 22.3 'El proceso ACS' de Roger S. Pressman - Administración de la Configuración del Software.">
+  <title>El Proceso ACS - Resumen Interactivo | Pressman 22.3</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER Y NAVEGACIÓN PRINCIPAL
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="site-title-box">
+        <h1 class="site-title">El Proceso ACS (Pressman Cap. 22.3)</h1>
+        <p class="site-subtitle">Administración de la Configuración del Software - Guía Interactiva</p>
+      </div>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#introduccion" class="nav-link">Introducción</a></li>
+          <li><a href="#identificacion" class="nav-link">Identificación</a></li>
+          <li><a href="#control-version" class="nav-link">Control de Versión</a></li>
+          <li><a href="#control-cambio" class="nav-link">Control de Cambio</a></li>
+          <li><a href="#auditoria" class="nav-link">Auditoría</a></li>
+          <li><a href="#reporte" class="nav-link">Reporte</a></li>
+          <li><a href="#conclusion" class="nav-link">Conclusión</a></li>
+          <li><a href="#referencia" class="nav-link">Referencias</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       CONTENIDO PRINCIPAL (SECCIONES DEL PROCESO ACS)
+       ========================================================================== -->
+  <main class="main-content">
+
+    <!-- INICIO: introduccion -->
+    <section id="introduccion" class="section-block" aria-labelledby="title-introduccion">
+      <div class="section-header">
+        <h2 id="title-introduccion" class="section-title">
+          <span>1. Introducción al Proceso ACS</span>
+          <span class="section-badge">Persona 1</span>
+        </h2>
+      </div>
+
+      <div class="p1-container">
+        <p class="p1-text">
+          La <strong class="p1-highlight">Administración de la Configuración del Software (ACS / SCM)</strong> es una disciplina de sombrilla (<em>umbrella activity</em>) esencial dentro de la ingeniería de software. Su propósito no es frenar el desarrollo, sino estructurar la evolución continua del sistema a medida que se producen cambios inevitables en los requisitos, el código, la arquitectura y los entornos.
+        </p>
+
+        <!-- 4 Objetivos del Proceso -->
+        <h3 class="p1-card-title" style="margin-top: 1rem;">Objetivos Fundamentales del Proceso ACS</h3>
+        <div class="p1-grid-4">
+          <div class="p1-card p1-card-primary">
+            <h4 class="p1-card-title"><span class="p1-badge-number">1</span> Identificar ICS</h4>
+            <p class="p1-text">Nombrar y categorizar de forma única cada Elemento de Configuración del Software (código, documentos, artefactos) para darles seguimiento.</p>
+          </div>
+          <div class="p1-card p1-card-primary">
+            <h4 class="p1-card-title"><span class="p1-badge-number">2</span> Administrar Cambios</h4>
+            <p class="p1-text">Evaluar y autorizar las modificaciones asegurando que solo se incorporen cambios justificados y controlados.</p>
+          </div>
+          <div class="p1-card p1-card-primary">
+            <h4 class="p1-card-title"><span class="p1-badge-number">3</span> Facilitar Versiones</h4>
+            <p class="p1-text">Permitir la construcción consistente de distintas versiones del producto listas para ser liberadas o probadas.</p>
+          </div>
+          <div class="p1-card p1-card-primary">
+            <h4 class="p1-card-title"><span class="p1-badge-number">4</span> Garantizar Calidad</h4>
+            <p class="p1-text">Preservar la integridad del sistema y comprobar la calidad mientras la configuración del software evoluciona.</p>
+          </div>
+        </div>
+
+        <!-- Preguntas Clave -->
+        <div class="p1-card p1-card-secondary" style="margin-top: 1rem;">
+          <h3 class="p1-card-title">Preguntas Fundamentales que Responde el Proceso</h3>
+          <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+            <li>¿Cómo identificamos y gestionamos los cambios antes y después de liberar una línea de referencia (<em>baseline</em>)?</li>
+            <li>¿Quién aprueba formalmente las modificaciones y con qué criterios?</li>
+            <li>¿Cómo garantizamos que los cambios autorizados se hayan implementado correctamente sin romper otras partes del sistema?</li>
+            <li>¿De qué manera informamos a todos los involucrados sobre las modificaciones realizadas?</li>
+          </ul>
+        </div>
+
+        <!-- Diagrama Interactivo de Capas Concéntricas (Figura 22.4) -->
+        <div style="margin-top: 1.5rem;">
+          <h3 class="p1-card-title">Las 5 Tareas ACS: Capas Concéntricas del Proceso (Fig. 22.4)</h3>
+          <p class="p1-text" style="margin-bottom: 1rem;">
+            Pressman modela el proceso ACS como un conjunto de capas concéntricas a través de las cuales fluyen los objetos de configuración (ICS). Haz clic en cada capa para explorar su función dentro del flujo:
+          </p>
+
+          <div class="p1-interactive-diagram">
+            <div class="p1-diagram-visual">
+              <div class="p1-concentric-container" role="tablist" aria-label="Capas concéntricas del proceso ACS">
+                <!-- Capa 5 -->
+                <div class="p1-capa p1-capa-5" data-capa="5" role="tab" tabindex="0" aria-selected="false" aria-label="Capa 5: Reporte del Estado">
+                  <span class="p1-capa-label">Reporte</span>
+                </div>
+                <!-- Capa 4 -->
+                <div class="p1-capa p1-capa-4" data-capa="4" role="tab" tabindex="0" aria-selected="false" aria-label="Capa 4: Auditoría">
+                  <span class="p1-capa-label">Auditoría</span>
+                </div>
+                <!-- Capa 3 -->
+                <div class="p1-capa p1-capa-3" data-capa="3" role="tab" tabindex="0" aria-selected="false" aria-label="Capa 3: Control de Cambio">
+                  <span class="p1-capa-label">Control Cambio</span>
+                </div>
+                <!-- Capa 2 -->
+                <div class="p1-capa p1-capa-2" data-capa="2" role="tab" tabindex="0" aria-selected="false" aria-label="Capa 2: Control de Versión">
+                  <span class="p1-capa-label">Control Versión</span>
+                </div>
+                <!-- Capa 1 (Centro) -->
+                <div class="p1-capa p1-capa-1 active" data-capa="1" role="tab" tabindex="0" aria-selected="true" aria-label="Capa 1: Identificación">
+                  <span class="p1-capa-label">Identificación</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p1-diagram-info" aria-live="polite">
+              <h4 id="p1-info-title" class="p1-info-title">1. Identificación de Objetos de Configuración (ICS)</h4>
+              <p id="p1-info-desc" class="p1-info-desc">
+                Es el núcleo del proceso ACS. Consiste en definir, nombrar y estructurar organizadamente todos los Elementos de Configuración del Software (documentos, modelos, código, pruebas). Establece las características del objeto y las relaciones &lt;parte de&gt; e &lt;interrelacionado&gt;.
+              </p>
+              <p class="p1-info-hint">💡 Toca o haz clic en cualquier capa del gráfico para ver su detalle.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clarificación sobre Burocracia -->
+        <div class="p1-alert p1-alert-warning" style="margin-top: 1rem;">
+          <strong>Nota Clave de Pressman:</strong> El proceso ACS <em>no debe ser burocrático</em>. Un proceso rígido y lento destruye la agilidad del equipo. Debe adaptarse al tamaño del proyecto y actuar como un facilitador de la calidad, no como un obstáculo de papeleo.
+        </div>
+      </div>
+    </section>
+    <!-- FIN: introduccion -->
+
+    <!-- INICIO: identificacion -->
+    <section id="identificacion" class="section-block" aria-labelledby="title-identificacion">
+      <div class="section-header">
+        <h2 id="title-identificacion" class="section-title">
+          <span>2. Identificación de Objetos en ACS (22.3.1)</span>
+          <span class="section-badge">Persona 1</span>
+        </h2>
+      </div>
+
+      <div class="p1-container">
+        <p class="p1-text">
+          Para gestionar el cambio de manera efectiva, los artefactos del software deben ser identificados mediante un <strong class="p1-highlight">enfoque orientado a objetos</strong>. En lugar de tratar el código o la documentación como archivos aislados, la ACS concibe los Elementos de Configuración del Software (ICS) como objetos con propiedades y relaciones.
+        </p>
+
+        <!-- 4 Características del Objeto -->
+        <h3 class="p1-card-title">Las 4 Características de un Objeto de Configuración</h3>
+        <div class="p1-grid-4">
+          <div class="p1-card p1-card-accent">
+            <h4 class="p1-card-title">1. Nombre</h4>
+            <p class="p1-text">Cadena de caracteres que identifica al objeto de forma única dentro del sistema (ej. <code>DataModel_v2</code>).</p>
+          </div>
+          <div class="p1-card p1-card-accent">
+            <h4 class="p1-card-title">2. Descripción</h4>
+            <p class="p1-text">Información sobre el propósito del objeto, su tipo, fecha de creación y autor responsable.</p>
+          </div>
+          <div class="p1-card p1-card-accent">
+            <h4 class="p1-card-title">3. Recursos</h4>
+            <p class="p1-text">Herramientas, librerías, bibliotecas o elementos requeridos para procesar o construir el objeto.</p>
+          </div>
+          <div class="p1-card p1-card-accent">
+            <h4 class="p1-card-title">4. Realización</h4>
+            <p class="p1-text">Puntero o dirección física real del objeto (ubicación exacta en el repositorio de archivos o base de datos).</p>
+          </div>
+        </div>
+
+        <!-- Objeto Básico vs Objeto Agregado -->
+        <div class="p1-grid-2" style="margin-top: 1rem;">
+          <div class="p1-card p1-card-primary">
+            <h3 class="p1-card-title">Objeto Básico</h3>
+            <p class="p1-text">
+              Es un elemento indivisible creado por un desarrollador durante el análisis, diseño o codificación.
+            </p>
+            <p class="p1-text" style="margin-top: 0.5rem;">
+              <strong>Ejemplos:</strong> Un archivo de código fuente (<code>AuthService.js</code>), un diagrama de clases UML específico, una especificación de prueba o un script SQL.
+            </p>
+          </div>
+          <div class="p1-card p1-card-secondary">
+            <h3 class="p1-card-title">Objeto Agregado</h3>
+            <p class="p1-text">
+              Es una colección lógica estructurada que agrupa múltiples objetos básicos u otros objetos agregados.
+            </p>
+            <p class="p1-text" style="margin-top: 0.5rem;">
+              <strong>Ejemplo del libro:</strong> <code>DesignSpecification</code> es un objeto agregado compuesto por: <code>ArchitecturalModel</code>, <code>DataModel</code>, <code>ComponentN</code> y <code>UMLClassDiagramN</code>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Relaciones entre Objetos -->
+        <div class="p1-card" style="margin-top: 1rem;">
+          <h3 class="p1-card-title">Relaciones entre Objetos de Configuración</h3>
+          <div class="p1-grid-2" style="margin-top: 0.5rem;">
+            <div>
+              <h4 style="color: var(--primary-color);">Relación &lt;parte de&gt; (part-of)</h4>
+              <p class="p1-text">Expresa la jerarquía de composición. Indica que un objeto básico pertenece formalmente a un objeto agregado de nivel superior (ej. <code>DataModel</code> es &lt;parte de&gt; <code>DesignSpecification</code>).</p>
+            </div>
+            <div>
+              <h4 style="color: var(--secondary-color);">Relación &lt;interrelacionado&gt; (interrelated)</h4>
+              <p class="p1-text">Conecta objetos que comparten dependencias cruzadas sin pertenecer a la misma jerarquía (ej. una clase de prueba <code>AuthTest.js</code> está &lt;interrelacionada&gt; con la especificación de requisitos <code>Req_Auth_01</code>).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla Comparativa Básico vs Agregado -->
+        <div style="margin-top: 1rem;">
+          <h3 class="p1-card-title">Tabla Comparativa: Objeto Básico vs. Objeto Agregado</h3>
+          <div class="p1-table-wrapper">
+            <table class="p1-table">
+              <thead>
+                <tr>
+                  <th>Criterio</th>
+                  <th>Objeto Básico</th>
+                  <th>Objeto Agregado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Nivel de Granularidad</strong></td>
+                  <td>Atómico / Indivisible.</td>
+                  <td>Compuesto / Contenedor.</td>
+                </tr>
+                <tr>
+                  <td><strong>Composición</strong></td>
+                  <td>Creado directamente por el desarrollador.</td>
+                  <td>Conjunto de objetos básicos u otros agregados.</td>
+                </tr>
+                <tr>
+                  <td><strong>Ejemplo de Pressman</strong></td>
+                  <td><code>ArchitecturalModel</code>, <code>DataModel</code>.</td>
+                  <td><code>DesignSpecification</code>.</td>
+                </tr>
+                <tr>
+                  <td><strong>Tipo de Relación Predominante</strong></td>
+                  <td>Es &lt;parte de&gt; un agregado.</td>
+                  <td>Contiene objetos mediante relaciones &lt;parte de&gt;.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Evolución antes y después de la Línea de Referencia -->
+        <div class="p1-card p1-card-primary" style="margin-top: 1.5rem;">
+          <h3 class="p1-card-title">Evolución de Objetos respecto a la Línea de Referencia (Baseline)</h3>
+          <p class="p1-text">
+            Los objetos de configuración no permanecen estáticos. Su gestión varía drásticamente según la etapa en la que se encuentren:
+          </p>
+          <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Antes de la Línea de Referencia:</strong> El objeto evoluciona de forma rápida e informal. El desarrollador modifica el artefacto libremente en su espacio de trabajo privado.</li>
+            <li><strong>Después de la Línea de Referencia:</strong> El objeto queda "congelado" e integrado a la baseline del proyecto. Cualquier cambio futuro requiere ingresar a la capa de <em>Control de Cambio</em> (evaluación formal, aprobación y trazabilidad).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- FIN: identificacion -->
+
+    <!-- INICIO: control-version -->
+    <section id="control-version" class="section-block" aria-labelledby="title-control-version">
+      <div class="section-header">
+        <h2 id="title-control-version" class="section-title">
+          <span>3. Control de Versión (22.3.2)</span>
+          <span class="section-badge">Persona 1</span>
+        </h2>
+      </div>
+
+      <div class="p1-container">
+        <!-- Fórmula del Control de Versión -->
+        <div class="p1-alert p1-alert-warning">
+          <strong>Fórmula del Control de Versión según Pressman:</strong><br>
+          <span style="font-size: 1.1rem; font-weight: 700; color: var(--primary-dark);">
+            Control de Versiones = Procedimientos de Administración + Herramientas Automatizadas
+          </span>
+          <p class="p1-text" style="margin-top: 0.5rem;">
+            El control de versión combina políticas humanas para gestionar revisiones con herramientas de software que rastrean los cambios efectuados a lo largo del desarrollo.
+          </p>
+        </div>
+
+        <!-- 4 Capacidades Clave -->
+        <h3 class="p1-card-title" style="margin-top: 1rem;">Las 4 Capacidades de un Sistema de Control de Versión</h3>
+        <div class="p1-grid-4">
+          <div class="p1-card p1-card-primary">
+            <h4 class="p1-card-title"><span class="p1-badge-number">1</span> Repositorio</h4>
+            <p class="p1-text">Base de datos que almacena todos los objetos de configuración, sus deltas (diferencias) e historiales de cambio.</p>
+          </div>
+          <div class="p1-card p1-card-primary">
+            <h4 class="p1-card-title"><span class="p1-badge-number">2</span> Admin. de Versiones</h4>
+            <p class="p1-text">Capacidad de gestionar variantes, ramas (branches) y etiquetado (tags) de revisiones específicas.</p>
+          </div>
+          <div class="p1-card p1-card-primary">
+            <h4 class="p1-card-title"><span class="p1-badge-number">3</span> Facilidad de Elaboración</h4>
+            <p class="p1-text">Herramientas (<em>build facilities</em>) para automatizar la compilación, enlazado y empaquetado del software.</p>
+          </div>
+          <div class="p1-card p1-card-primary">
+            <h4 class="p1-card-title"><span class="p1-badge-number">4</span> Rastreador de Conflictos</h4>
+            <p class="p1-text">Permite vincular fallas u órdenes de cambio con los objetos y modificaciones específicas que los resuelven.</p>
+          </div>
+        </div>
+
+        <!-- Conjunto de Cambio y Modelado de Sistema -->
+        <div class="p1-grid-2" style="margin-top: 1rem;">
+          <div class="p1-card p1-card-secondary">
+            <h3 class="p1-card-title">Conjunto de Cambio (Change Set)</h3>
+            <p class="p1-text">
+              Es el paquete delimitado de todas las modificaciones (adiciones, borrados, ediciones) realizadas en uno o múltiples archivos para cumplir con un objetivo específico (ej. corregir un bug o agregar un botón). Permite aplicar o revertir el cambio completo de forma atómica.
+            </p>
+          </div>
+          <div class="p1-card p1-card-secondary">
+            <h3 class="p1-card-title">Modelado del Sistema</h3>
+            <p class="p1-text">
+              Representación conceptual que define la estructura exacta del sistema mediante la lista de versiones específicas de cada objeto de configuración que se deben ensamblar para construir una versión funcional concreta.
+            </p>
+          </div>
+        </div>
+
+        <!-- Análisis Herramienta CVS / SVC -->
+        <div class="p1-card" style="margin-top: 1rem;">
+          <h3 class="p1-card-title">Herramientas de Control de Versión Clásicas (CVS / SVC): Lo que Hacen vs. Lo que NO Hacen</h3>
+          <div class="p1-grid-2" style="margin-top: 0.5rem;">
+            <div style="background-color: #f0fdf4; padding: 1rem; border-radius: 0.5rem; border: 1px solid #bbf7d0;">
+              <h4 style="color: #166534; font-weight: 700;">✅ Lo que SÍ hace una herramienta CVS</h4>
+              <ul style="margin-left: 1.25rem; margin-top: 0.5rem; color: #166534; line-height: 1.6;">
+                <li>Mantiene un repositorio central o distribuido.</li>
+                <li>Guarda únicamente las diferencias (deltas) entre versiones para ahorrar espacio.</li>
+                <li>Aísla a cada desarrollador en su propia copia de trabajo (workspace).</li>
+                <li>Ayuda a mezclar (merge) cambios concurrentes en los mismos archivos.</li>
+              </ul>
+            </div>
+            <div style="background-color: #fef2f2; padding: 1rem; border-radius: 0.5rem; border: 1px solid #fecaca;">
+              <h4 style="color: #991b1b; font-weight: 700;">❌ Lo que NO hace una herramienta CVS por sí sola</h4>
+              <ul style="margin-left: 1.25rem; margin-top: 0.5rem; color: #991b1b; line-height: 1.6;">
+                <li>No realiza la construcción e integración del ejecutable (requiere herramientas de build como Make o CI/CD).</li>
+                <li>No implementa las políticas ni las decisiones de aprobación del control de cambio (requiere la capa de evaluación humana y CCB).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conexión Moderna: Git -->
+        <div class="p1-card p1-card-primary" style="margin-top: 1.5rem;">
+          <h3 class="p1-card-title">Conexión con el Desarrollo Moderno: Git y GitHub</h3>
+          <p class="p1-text">
+            Hoy en día, herramientas como <strong class="p1-highlight">Git</strong> representan la evolución directa de estos conceptos expuestos por Pressman:
+          </p>
+          <div class="p1-code-block" style="margin-top: 0.5rem;">
+            git checkout -b feature/identificacion-version<br>
+            git commit -m "feat: implementar objeto agregado DesignSpecification e historia del sistema"<br>
+            git push origin feature/identificacion-version
+          </div>
+          <p class="p1-text" style="margin-top: 0.5rem;">
+            Git implementa los <em>Change Sets</em> mediante commits SHA-1 inmutables, repositorios distribuidos, ramificación ultra rápida y aislamiento total por desarrollado. Plataformas como GitHub/GitLab integran el control de versiones con el rastreo de fallas (Issues) y flujos automatizados de compilación (GitHub Actions).
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- FIN: control-version -->
+
+    <!-- INICIO: control-cambio -->
+    <section id="control-cambio" class="section-block" aria-labelledby="title-control-cambio">
+      <div class="section-header">
+        <h2 id="title-control-cambio" class="section-title">
+          <span>4. Control de Cambio (22.3.3)</span>
+          <span class="section-badge">Persona 2</span>
+        </h2>
+      </div>
+      <div class="empty-section-placeholder">
+        <p><strong>[Sección a desarrollar por Persona 2]</strong></p>
+        <p>Aquí se incluirá la solicitud de cambio, el flujo de aprobación, el Comité de Control de Cambio (CCB) y los diagramas de secuencia de cambio.</p>
+      </div>
+    </section>
+    <!-- FIN: control-cambio -->
+
+    <!-- INICIO: auditoria -->
+    <section id="auditoria" class="section-block" aria-labelledby="title-auditoria">
+      <div class="section-header">
+        <h2 id="title-auditoria" class="section-title">
+          <span>5. Auditoría de la Configuración del Software (22.3.4)</span>
+          <span class="section-badge">Persona 2</span>
+        </h2>
+      </div>
+      <div class="empty-section-placeholder">
+        <p><strong>[Sección a desarrollar por Persona 2]</strong></p>
+        <p>Aquí se expondrá el rol del Aseguramiento de la Calidad (SQA), verificaciones de la auditoría técnica y la garantía de cumplimiento de requisitos.</p>
+      </div>
+    </section>
+    <!-- FIN: auditoria -->
+
+    <!-- INICIO: reporte -->
+    <section id="reporte" class="section-block" aria-labelledby="title-reporte">
+      <div class="section-header">
+        <h2 id="title-reporte" class="section-title">
+          <span>6. Reporte del Estado de la Configuración (22.3.5)</span>
+          <span class="section-badge">Persona 3</span>
+        </h2>
+      </div>
+      <div class="empty-section-placeholder">
+        <p><strong>[Sección a desarrollar por Persona 3]</strong></p>
+        <p>Aquí se abordará el registro del estado de la configuración (SCSR), métricas, registro de auditorías y comunicación a los involucrados.</p>
+      </div>
+    </section>
+    <!-- FIN: reporte -->
+
+    <!-- INICIO: conclusion -->
+    <section id="conclusion" class="section-block" aria-labelledby="title-conclusion">
+      <div class="section-header">
+        <h2 id="title-conclusion" class="section-title">
+          <span>7. Conclusión del Grupo</span>
+          <span class="section-badge">Persona 3</span>
+        </h2>
+      </div>
+      <div class="empty-section-placeholder">
+        <p><strong>[Sección a desarrollar por Persona 3]</strong></p>
+        <p>Síntesis general sobre la importancia de la ACS en la ingeniería de software moderna y proyectos ágiles.</p>
+      </div>
+    </section>
+    <!-- FIN: conclusion -->
+
+    <!-- INICIO: referencia -->
+    <section id="referencia" class="section-block" aria-labelledby="title-referencia">
+      <div class="section-header">
+        <h2 id="title-referencia" class="section-title">
+          <span>8. Referencias Bibliográficas</span>
+          <span class="section-badge">Persona 3</span>
+        </h2>
+      </div>
+      <div class="empty-section-placeholder">
+        <p><strong>[Sección a desarrollar por Persona 3]</strong></p>
+        <p>Referencia formal en formato APA al libro de Roger S. Pressman y Bruce R. Maxim.</p>
+      </div>
+    </section>
+    <!-- FIN: referencia -->
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER Y CRÉDITOS
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>Gestión de Proyectos de Software &copy; 2026 - Resumen Interactivo Sección 22.3 (Pressman)</p>
+      <p>Desarrollado en HTML5, CSS3 y JavaScript Puro sin Librerías Externas.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
