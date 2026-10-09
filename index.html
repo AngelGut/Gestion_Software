@@ -368,9 +368,100 @@
           <span class="section-badge">Persona 2</span>
         </h2>
       </div>
-      <div class="empty-section-placeholder">
-        <p><strong>[Sección a desarrollar por Persona 2]</strong></p>
-        <p>Aquí se incluirá la solicitud de cambio, el flujo de aprobación, el Comité de Control de Cambio (CCB) y los diagramas de secuencia de cambio.</p>
+      <div class="p2-container">
+        <!-- Contenido P2 -->
+        <article class="p2-article">
+          <h3>¿Por qué existe el control de cambio?</h3>
+          <p>El cambio sin control conduce inevitablemente al caos, pero imponer un control excesivo puede asfixiar la creatividad y entorpecer el trabajo del equipo. Como plantea James Bach, el control de cambios es un verdadero <strong>acto de equilibrio</strong>: se debe tener el grado justo de control para evitar fallas graves, sin desanimar la innovación.</p>
+        </article>
+
+        <article class="p2-article">
+          <h3>El Proceso de Control de Cambio (Flujo)</h3>
+          <p>El flujo típico de cómo se gestiona un cambio se puede explorar en el siguiente elemento interactivo:</p>
+          
+          <!-- Stepper Interactivo -->
+          <div class="p2-stepper-container">
+            <div class="p2-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="p2-progress-fill" id="p2-progress"></div>
+            </div>
+            <div class="p2-step-content" aria-live="polite">
+              <h4 id="p2-step-title">Paso 1: Necesidad del cambio</h4>
+              <p id="p2-step-desc">Se reconoce que el sistema necesita una modificación.</p>
+            </div>
+            
+            <div class="p2-stepper-controls">
+              <button id="p2-btn-prev" class="p2-btn" disabled>Anterior</button>
+              <button id="p2-btn-deny" class="p2-btn p2-btn-danger" style="display: none;">Rechazar Cambio</button>
+              <button id="p2-btn-approve" class="p2-btn p2-btn-success" style="display: none;">Aprobar Cambio</button>
+              <button id="p2-btn-next" class="p2-btn">Siguiente</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="p2-article">
+          <h3>Orden de Cambio de Ingeniería (OCI)</h3>
+          <p>Una <strong>OCI</strong> es el documento que se genera si la petición es aprobada. Detalla explícitamente el cambio que se debe realizar, las restricciones a respetar, y cuáles serán los criterios para revisarlo y auditarlo. Varias peticiones de cambio pueden agruparse en una sola OCI para mayor eficiencia.</p>
+        </article>
+
+        <article class="p2-article">
+          <h3>Mecanismos de Control de Versión</h3>
+          <p>El control de versión dentro del proceso de cambio se apoya en dos pilares fundamentales:</p>
+          <ul>
+            <li><strong>Control de acceso:</strong> Define y restringe qué ingenieros tienen la autoridad para acceder y modificar un objeto en particular.</li>
+            <li><strong>Control de sincronización:</strong> Asegura que si dos personas realizan cambios en paralelo, no sobrescriban el trabajo del otro.</li>
+          </ul>
+        </article>
+
+        <article class="p2-article">
+          <h3>Niveles de Control de Cambio</h3>
+          <div class="p2-table-wrapper">
+            <table class="p2-table">
+              <thead>
+                <tr>
+                  <th>Nivel</th>
+                  <th>Momento de aplicación</th>
+                  <th>Quién aprueba</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Informal</strong></td>
+                  <td>Antes de que el objeto sea parte de una línea de referencia formal.</td>
+                  <td>El propio desarrollador, siempre que no afecte requisitos globales.</td>
+                </tr>
+                <tr>
+                  <td><strong>Nivel de Proyecto</strong></td>
+                  <td>Cuando ya existe una línea de referencia establecida.</td>
+                  <td>El gerente del proyecto (cambios locales) o la ACC (cambios mayores).</td>
+                </tr>
+                <tr>
+                  <td><strong>Formal</strong></td>
+                  <td>Cuando el producto ya ha sido liberado al cliente.</td>
+                  <td>La Autoridad de Control de Cambio (ACC) siguiendo un proceso riguroso.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="p2-article">
+          <h3>Rol de la Autoridad de Control de Cambio (ACC)</h3>
+          <p>La ACC puede ser una sola persona (como el gerente) o un comité con una <strong>visión global</strong> del proyecto (representantes de hardware, marketing, etc.). Su rol no es solo técnico; deben evaluar cómo impactará un cambio en el hardware, en el desempeño general, en la percepción de los clientes y en la confiabilidad del producto antes de dar el visto bueno.</p>
+        </article>
+
+        <article class="p2-article">
+          <h3>Ejemplos de Aplicación</h3>
+          <div class="p2-examples">
+            <div class="p2-example-box">
+              <h4>Caso de Estudio: CasaSegura</h4>
+              <p>En el ejemplo del proyecto CasaSegura de Pressman, Doug señala 3 necesidades para evitar el caos: desarrollar un proceso de control de cambio claro, conseguir una buena herramienta ACS y que todos se comprometan estrictamente a seguir el proceso.</p>
+            </div>
+            <div class="p2-example-box">
+              <h4>Analogía en nuestro proyecto (GitHub)</h4>
+              <p>En nuestro flujo de trabajo moderno, una <em>petición de cambio</em> sería un <strong>Issue</strong>. La <em>Orden de Cambio de Ingeniería (OCI)</em> se asemeja a un <strong>Pull Request (PR)</strong>, y la <em>línea de referencia</em> equivale a nuestra <strong>rama protegida (main)</strong>.</p>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
     <!-- FIN: control-cambio -->
@@ -450,3 +541,4 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+

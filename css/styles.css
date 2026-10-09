@@ -566,8 +566,255 @@ body {
   overflow-x: auto;
 }
 
-/* ===== SECCIÓN P2 ===== */
-/* Espacio reservado para Persona 2 */
+/* ===== SECCIÓN P2 (Jeiferson) ===== */
+.p2-section {
+  font-family: var(--font-family, system-ui, sans-serif);
+  color: var(--text-color, #333);
+  line-height: 1.6;
+  padding: 1rem 0;
+}
+
+.p2-article {
+  margin-bottom: 2.5rem;
+}
+
+/* Stepper Interactivo */
+.p2-stepper-container {
+  background: var(--bg-light, #f8f9fa);
+  border: 1px solid var(--border-color, #e9ecef);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.p2-progress-bar {
+  background: var(--border-color, #e9ecef);
+  border-radius: 4px;
+  height: 8px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.p2-progress-fill {
+  background: var(--color-primary, #0056b3);
+  height: 100%;
+  width: 0%;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.p2-step-content {
+  min-height: 90px;
+  margin-bottom: 1.5rem;
+}
+
+.p2-step-content h4 {
+  margin-top: 0;
+  color: var(--color-primary, #0056b3);
+  font-size: 1.2rem;
+}
+
+.p2-stepper-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.p2-btn {
+  background: var(--color-primary, #0056b3);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.p2-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.p2-btn:disabled {
+  background: var(--color-disabled, #adb5bd);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.p2-btn-success { background: var(--color-success, #198754); }
+.p2-btn-danger { background: var(--color-danger, #dc3545); }
+
+/* Tablas */
+.p2-table-wrapper {
+  overflow-x: auto; /* Responsive en móviles */
+}
+
+.p2-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.p2-table th, .p2-table td {
+  border: 1px solid var(--border-color, #dee2e6);
+  padding: 12px;
+  text-align: left;
+}
+
+.p2-table th {
+  background: var(--bg-light, #f8f9fa);
+  color: var(--color-primary, #0056b3);
+}
+
+/* Ejemplos Cajas */
+.p2-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.p2-example-box {
+  flex: 1 1 300px; /* Responsive (min-width 300px, crece si hay espacio) */
+  background: #fff;
+  border-left: 4px solid var(--color-primary, #0056b3);
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.p2-example-box h4 {
+  margin-top: 0;
+  color: var(--color-primary, #0056b3);
+}
 
 /* ===== SECCIÓN P3 ===== */
 /* Espacio reservado para Persona 3 */
+
+
+/* ===== SECCIÓN P2 (Jeiferson) ===== */
+.p2-section {
+  font-family: var(--font-family, system-ui, sans-serif);
+  color: var(--text-color, #333);
+  line-height: 1.6;
+  padding: 1rem 0;
+}
+
+.p2-article {
+  margin-bottom: 2.5rem;
+}
+
+/* Stepper Interactivo */
+.p2-stepper-container {
+  background: var(--bg-light, #f8f9fa);
+  border: 1px solid var(--border-color, #e9ecef);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.p2-progress-bar {
+  background: var(--border-color, #e9ecef);
+  border-radius: 4px;
+  height: 8px;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.p2-progress-fill {
+  background: var(--color-primary, #0056b3);
+  height: 100%;
+  width: 0%;
+  transition: width 0.4s ease, background-color 0.4s ease;
+}
+
+.p2-step-content {
+  min-height: 90px;
+  margin-bottom: 1.5rem;
+}
+
+.p2-step-content h4 {
+  margin-top: 0;
+  color: var(--color-primary, #0056b3);
+  font-size: 1.2rem;
+}
+
+.p2-stepper-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.p2-btn {
+  background: var(--color-primary, #0056b3);
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.p2-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.p2-btn:disabled {
+  background: var(--color-disabled, #adb5bd);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.p2-btn-success { background: var(--color-success, #198754); }
+.p2-btn-danger { background: var(--color-danger, #dc3545); }
+
+/* Tablas */
+.p2-table-wrapper {
+  overflow-x: auto; /* Responsive en móviles */
+}
+
+.p2-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.p2-table th, .p2-table td {
+  border: 1px solid var(--border-color, #dee2e6);
+  padding: 12px;
+  text-align: left;
+}
+
+.p2-table th {
+  background: var(--bg-light, #f8f9fa);
+  color: var(--color-primary, #0056b3);
+}
+
+/* Ejemplos Cajas */
+.p2-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.p2-example-box {
+  flex: 1 1 300px; /* Responsive (min-width 300px, crece si hay espacio) */
+  background: #fff;
+  border-left: 4px solid var(--color-primary, #0056b3);
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+.p2-example-box h4 {
+  margin-top: 0;
+  color: var(--color-primary, #0056b3);
+}
+

@@ -102,3 +102,105 @@
     // Código interactivo de la Persona 3
   });
 })();
+
+// Lógica para el Stepper Interactivo de Control de Cambio (Persona 2)
+document.addEventListener('DOMContentLoaded', function() {
+  const steps = [
+    { title: "Paso 1: Necesidad del cambio", desc: "Se reconoce que el sistema necesita una modificación para corregir un defecto o mejorar su capacidad." },
+    { title: "Paso 2: Petición de cambio", desc: "El usuario, desarrollador o gerente levanta una petición formal del cambio." },
+    { title: "Paso 3: Evaluación del desarrollador", desc: "Se evalúa el mérito técnico, efectos colaterales, impacto global en otros componentes y el costo proyectado." },
+    { title: "Paso 4: Reporte de cambio", desc: "Los resultados de la evaluación se documentan en un reporte para que la ACC pueda evaluarlo." },
+    { title: "Paso 5: Decisión de la ACC", desc: "La Autoridad de Control de Cambio (ACC) evalúa el reporte y decide si el cambio procede.", showDecision: true },
+    { title: "Paso 6: Orden de Cambio de Ingeniería (OCI)", desc: "Se aprobó el cambio. Se genera la OCI detallando qué se hará, sus restricciones y criterios de revisión." },
+    { title: "Paso 7: Asignación y Salida (Check-out)", desc: "Se asignan responsables y se extraen los objetos a modificar (check-out) hacia el entorno del desarrollador." },
+    { title: "Paso 8: Implementación y Auditoría", desc: "Se realiza el cambio en el código, seguido de una rigurosa revisión técnica." },
+    { title: "Paso 9: Entrada (Check-in) y Pruebas", desc: "El objeto modificado reingresa al repositorio (check-in), creando una línea de referencia para control de calidad." },
+    { title: "Paso 10: Integración y Distribución", desc: "Se reconstruye y audita la versión, incorporando finalmente el cambio a la nueva liberación oficial del producto." }
+  ];
+
+  const rejectedStep = { 
+    title: "Cambio Denegado", 
+    desc: "La petición ha sido denegada por la ACC. Se informa al usuario de los motivos y el flujo termina aquí." 
+  };
+
+  let currentStep = 0;
+  let isRejected = false;
+
+  const titleEl = document.getElementById('p2-step-title');
+  const descEl = document.getElementById('p2-step-desc');
+  const progressEl = document.getElementById('p2-progress');
+  const progressBarEl = document.querySelector('.p2-progress-bar');
+  
+  const btnPrev = document.getElementById('p2-btn-prev');
+  const btnNext = document.getElementById('p2-btn-next');
+  const btnApprove = document.getElementById('p2-btn-approve');
+  const btnDeny = document.getElementById('p2-btn-deny');
+
+  if (!titleEl || !descEl || !progressEl || !btnPrev || !btnNext) return;
+
+  function updateStepper() {
+    if (isRejected) {
+      titleEl.textContent = rejectedStep.title;
+      descEl.textContent = rejectedStep.desc;
+      progressEl.style.width = '100%';
+      progressEl.style.backgroundColor = 'var(--color-danger, #dc3545)';
+      progressBarEl.setAttribute('aria-valuenow', 100);
+      
+      btnApprove.style.display = 'none';
+      btnDeny.style.display = 'none';
+      btnNext.style.display = 'none';
+      btnPrev.disabled = false;
+      return;
+    }
+
+    const step = steps[currentStep];
+    titleEl.textContent = step.title;
+    descEl.textContent = step.desc;
+
+    const progressPercentage = (currentStep / (steps.length - 1)) * 100;
+    progressEl.style.width = progressPercentage + '%';
+    progressEl.style.backgroundColor = 'var(--color-primary, #0056b3)';
+    progressBarEl.setAttribute('aria-valuenow', Math.round(progressPercentage));
+
+    btnPrev.disabled = currentStep === 0;
+
+    if (step.showDecision) {
+      btnNext.style.display = 'none';
+      btnApprove.style.display = 'inline-block';
+      btnDeny.style.display = 'inline-block';
+    } else {
+      btnNext.style.display = 'inline-block';
+      btnApprove.style.display = 'none';
+      btnDeny.style.display = 'none';
+      btnNext.disabled = currentStep === steps.length - 1;
+    }
+  }
+
+  btnNext.addEventListener('click', () => {
+    if (currentStep < steps.length - 1) {
+      currentStep++;
+      updateStepper();
+    }
+  });
+
+  btnPrev.addEventListener('click', () => {
+    if (isRejected) {
+      isRejected = false;
+    } else if (currentStep > 0) {
+      currentStep--;
+    }
+    updateStepper();
+  });
+
+  btnApprove.addEventListener('click', () => {
+    currentStep++;
+    updateStepper();
+  });
+
+  btnDeny.addEventListener('click', () => {
+    isRejected = true;
+    updateStepper();
+  });
+
+  updateStepper();
+});
