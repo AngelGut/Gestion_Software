@@ -2,26 +2,26 @@
    VARIABLES GLOBALES Y CONFIGURACIÓN (:root)
    ========================================================================== */
 :root {
-  /* Paleta de Colores - Tema Oscuro (Negro + Cyan) */
-  --primary-color: #00f0ff;       /* Cyan Neón */
-  --primary-light: #66f5ff;       
-  --primary-dark: #008f99;        
-  --secondary-color: #ff007f;     /* Rosa Neón */
-  --accent-color: #ffd700;        
-  --bg-color: #0f0f11;            /* Fondo general casi negro */
-  --surface-color: #1c1c1f;       /* Fondo de tarjetas / secciones */
-  --text-primary: #f4f4f5;        /* Texto principal claro */
-  --text-secondary: #a1a1aa;      /* Texto secundario gris */
-  --border-color: #27272a;        /* Líneas separadoras oscuras */
-  --color-success: #10b981;       /* Verde para aprobados */
-  --color-danger: #ef4444;        /* Rojo para denegados */
-  --color-disabled: #3f3f46;
+  /* Paleta de Colores - Dark Theme Profesional (Slate & Blue) */
+  --primary-color: #3b82f6;       /* Azul brillante moderno */
+  --primary-light: #60a5fa;       
+  --primary-dark: #1d4ed8;        
+  --secondary-color: #10b981;     /* Verde Esmeralda */
+  --accent-color: #f59e0b;        /* Ámbar */
+  --bg-color: #0f172a;            /* Fondo oscuro muy elegante (Slate 900) */
+  --surface-color: #1e293b;       /* Fondo de tarjetas (Slate 800) */
+  --text-primary: #f8fafc;        /* Texto principal blanco grisáceo */
+  --text-secondary: #94a3b8;      /* Texto secundario gris medio */
+  --border-color: #334155;        /* Bordes oscuros */
+  --color-success: #10b981;       
+  --color-danger: #ef4444;        
+  --color-disabled: #475569;
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
 
-  /* Tipografía Mejorada */
+  /* Tipografía */
   --font-family-base: "Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-family-mono: "Fira Code", ui-monospace, Consolas, monospace;
   
@@ -75,9 +75,10 @@ body {
    HEADER Y NAVEGACIÓN
    ========================================================================== */
 .site-header {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
-  color: #ffffff;
-  padding: var(--spacing-lg) var(--spacing-md);
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-md) var(--spacing-lg);
   box-shadow: var(--shadow-md);
   position: sticky;
   top: 0;
@@ -114,7 +115,7 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.025em;
-  color: #ffffff;
+  color: var(--primary-color);
 }
 
 .site-subtitle {
@@ -225,13 +226,13 @@ body {
    FOOTER GLOBAL
    ========================================================================== */
 .site-footer {
-  background-color: var(--primary-light);
+  background-color: var(--surface-color);
   color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
   padding: var(--spacing-lg) var(--spacing-md);
   text-align: center;
   font-size: 0.875rem;
   margin-top: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-container {
@@ -851,6 +852,10 @@ body {
   font-size: 0.95rem;
   line-height: 1.5;
 }
+
+
+
+
 
 
 
