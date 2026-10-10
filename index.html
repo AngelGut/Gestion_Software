@@ -474,9 +474,95 @@
           <span class="section-badge">Persona 2</span>
         </h2>
       </div>
-      <div class="empty-section-placeholder">
-        <p><strong>[Sección a desarrollar por Persona 2]</strong></p>
-        <p>Aquí se expondrá el rol del Aseguramiento de la Calidad (SQA), verificaciones de la auditoría técnica y la garantía de cumplimiento de requisitos.</p>
+      <div class="p2-container">
+        <article class="p2-article">
+          <h3>¿Por qué auditar si ya tenemos control de cambios?</h3>
+          <p>Identificar, versionar y controlar quién hace un cambio no es suficiente si el cambio se implementa mal. La auditoría existe para responder a una simple pregunta: <em>¿Cómo nos aseguramos de que el cambio se hizo correctamente y sin romper nada más?</em></p>
+        </article>
+
+        <article class="p2-article">
+          <h3>Revisión Técnica vs. Auditoría de Configuración</h3>
+          <p>Para asegurar la calidad, el equipo se apoya en dos validaciones que se complementan entre sí:</p>
+          <div class="p2-table-wrapper">
+            <table class="p2-table">
+              <thead>
+                <tr>
+                  <th>Característica</th>
+                  <th>Revisión Técnica Formal (RTF)</th>
+                  <th>Auditoría de Configuración del Software</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Enfoque principal</strong></td>
+                  <td>Exactitud técnica del código o modelo modificado.</td>
+                  <td>Cumplimiento del proceso y completitud del cambio.</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Qué busca?</strong></td>
+                  <td>Errores lógicos, efectos colaterales y consistencia técnica.</td>
+                  <td>Que no falte documentación y se hayan seguido los estándares.</td>
+                </tr>
+                <tr>
+                  <td><strong>¿Quién la hace?</strong></td>
+                  <td>Otros desarrolladores o pares (Peer review).</td>
+                  <td>El grupo de Aseguramiento de Calidad (SQA) en proyectos formales.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="p2-article">
+          <h3>Las 6 Preguntas Clave de la Auditoría</h3>
+          <p>Una auditoría de configuración complementa a la revisión técnica respondiendo cuestiones que muchas veces los programadores pasan por alto. Pon a prueba tus conocimientos sobre auditoría marcando las 6 verificaciones esenciales:</p>
+
+          <!-- Checklist Interactivo -->
+          <div class="p2-stepper-container" id="p2-audit-container">
+            <h4 style="margin-top:0; color: var(--color-primary, #0056b3);">Checklist de Auditoría SQA</h4>
+            <div class="p2-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="margin-bottom: 1rem;">
+              <div class="p2-progress-fill" id="p2-audit-progress" style="background-color: var(--color-success, #198754);"></div>
+            </div>
+            
+            <div class="p2-checklist">
+              <label class="p2-check-item">
+                <input type="checkbox" class="p2-audit-chk">
+                <span>¿Se implementó el cambio exacto de la OCI sin agregar modificaciones "extra" no autorizadas?</span>
+              </label>
+              <label class="p2-check-item">
+                <input type="checkbox" class="p2-audit-chk">
+                <span>¿Se llevó a cabo una revisión técnica formal para validar la exactitud del código?</span>
+              </label>
+              <label class="p2-check-item">
+                <input type="checkbox" class="p2-audit-chk">
+                <span>¿Se respetó el proceso de software y los estándares de codificación establecidos?</span>
+              </label>
+              <label class="p2-check-item">
+                <input type="checkbox" class="p2-audit-chk">
+                <span>¿Se resaltó o documentó el cambio en el ICS con la fecha correspondiente y su autor?</span>
+              </label>
+              <label class="p2-check-item">
+                <input type="checkbox" class="p2-audit-chk">
+                <span>¿Se actualizaron adecuadamente todos los demás Objetos de Configuración (ICS) relacionados?</span>
+              </label>
+              <label class="p2-check-item">
+                <input type="checkbox" class="p2-audit-chk">
+                <span>¿Se siguieron los procedimientos de la ACS para registrar y reportar la modificación?</span>
+              </label>
+            </div>
+
+            <div id="p2-audit-success" style="display: none; margin-top: 15px; background: #d1e7dd; color: #0f5132; padding: 10px; border-radius: 5px; border-left: 4px solid #198754;">
+              <strong>¡Auditoría Aprobada!</strong> Todos los criterios se han cumplido. El cambio puede pasar a la línea de referencia (baseline).
+            </div>
+            
+            <button id="p2-btn-reset-audit" class="p2-btn" style="margin-top: 15px; display: none;">Reiniciar Auditoría</button>
+          </div>
+        </article>
+
+        <article class="p2-article">
+          <h3>El Rol del SQA en Entornos Formales</h3>
+          <p>Cuando un proyecto es altamente formal, la auditoría no la hace el mismo equipo de desarrollo, sino un grupo independiente de <strong>Aseguramiento de Calidad del Software (SQA)</strong>. Ellos garantizan que se incluyan los objetos correctos en cada "build" y que la documentación (manuales, requisitos) refleje fielmente la versión construida.</p>
+        </article>
       </div>
     </section>
     <!-- FIN: auditoria -->
@@ -541,4 +627,5 @@
   <script src="js/script.js"></script>
 </body>
 </html>
+
 

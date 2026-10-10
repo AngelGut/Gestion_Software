@@ -818,3 +818,33 @@ body {
   color: var(--color-primary, #0056b3);
 }
 
+
+/* Checklist de Auditoria (Persona 2) */
+.p2-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.p2-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.p2-check-item:hover {
+  background-color: rgba(0, 86, 179, 0.05);
+}
+.p2-check-item input[type="checkbox"] {
+  margin-top: 5px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.p2-check-item span {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+

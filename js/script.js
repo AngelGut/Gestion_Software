@@ -204,3 +204,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updateStepper();
 });
+// Lógica para Checklist de Auditoría (Persona 2)
+document.addEventListener('DOMContentLoaded', function() {
+  const auditChecks = document.querySelectorAll('.p2-audit-chk');
+  const auditProgress = document.getElementById('p2-audit-progress');
+  const auditSuccess = document.getElementById('p2-audit-success');
+  const btnResetAudit = document.getElementById('p2-btn-reset-audit');
+
+  if (auditChecks.length > 0 && auditProgress) {
+    function updateAudit() {
+      let checkedCount = 0;
+      auditChecks.forEach(chk => {
+        if (chk.checked) checkedCount++;
+      });
+      
+      const percentage = (checkedCount / auditChecks.length) * 100;
+      auditProgress.style.width = percentage + '%';
+      auditProgress.parentElement.setAttribute('aria-valuenow', Math.round(percentage));
+
+      if (checkedCount === auditChecks.length) {
+        auditSuccess.style.display = 'block';
+        btnResetAudit.style.display = 'inline-block';
+      } else {
+        auditSuccess.style.display = 'none';
+        btnResetAudit.style.display = 'none';
+      }
+    }
+
+    auditChecks.forEach(chk => {
+      chk.addEventListener('change', updateAudit);
+    });
+
+    if (btnResetAudit) {
+      btnResetAudit.addEventListener('click', () => {
+        auditChecks.forEach(chk => chk.checked = false);
+        updateAudit();
+      });
+    }
+  }
+});
