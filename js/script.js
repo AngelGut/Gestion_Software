@@ -89,7 +89,7 @@
 (function () {
   'use strict';
   document.addEventListener('DOMContentLoaded', function () {
-    // Código interactivo de la Persona 2
+    // Código interactivo de la Jeiferson
   });
 })();
 
@@ -99,11 +99,11 @@
 (function () {
   'use strict';
   document.addEventListener('DOMContentLoaded', function () {
-    // Código interactivo de la Persona 3
+    // Código interactivo de la Elian
   });
 })();
 
-// Lógica para el Stepper Interactivo de Control de Cambio (Persona 2)
+// Lógica para el Stepper Interactivo de Control de Cambio (Jeiferson)
 document.addEventListener('DOMContentLoaded', function() {
   const steps = [
     { title: "Paso 1: Necesidad del cambio", desc: "Se reconoce que el sistema necesita una modificación para corregir un defecto o mejorar su capacidad." },
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updateStepper();
 });
-// Lógica para Checklist de Auditoría (Persona 2)
+// Lógica para Checklist de Auditoría (Jeiferson)
 document.addEventListener('DOMContentLoaded', function() {
   const auditChecks = document.querySelectorAll('.p2-audit-chk');
   const auditProgress = document.getElementById('p2-audit-progress');
@@ -243,3 +243,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
