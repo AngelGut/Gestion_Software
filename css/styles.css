@@ -2,26 +2,28 @@
    VARIABLES GLOBALES Y CONFIGURACIÓN (:root)
    ========================================================================== */
 :root {
-  /* Paleta de Colores - Dark Theme Profesional (Slate & Blue) */
-  --primary-color: #3b82f6;       /* Azul brillante moderno */
-  --primary-light: #60a5fa;       
-  --primary-dark: #1d4ed8;        
-  --secondary-color: #10b981;     /* Verde Esmeralda */
-  --accent-color: #f59e0b;        /* Ámbar */
-  --bg-color: #0f172a;            /* Fondo oscuro muy elegante (Slate 900) */
-  --surface-color: #1e293b;       /* Fondo de tarjetas (Slate 800) */
-  --text-primary: #f8fafc;        /* Texto principal blanco grisáceo */
-  --text-secondary: #94a3b8;      /* Texto secundario gris medio */
-  --border-color: #334155;        /* Bordes oscuros */
-  --color-success: #10b981;       
-  --color-danger: #ef4444;        
-  --color-disabled: #475569;
+  /* Paleta de Colores - Tema Oscuro (Negro y Rojo) */
+  --primary-color: #FF0000;       /* Rojo brillante */
+  --primary-light: #BC0202;       /* Rojo medio */
+  --primary-dark: #830000;        /* Rojo oscuro */
+  --secondary-color: #BC0202;     
+  --accent-color: #FF0000;        
+  
+  --bg-color: #000000;            /* Fondo Negro Puro */
+  --surface-color: #0d0d0d;       /* Gris súper oscuro para tarjetas */
+  --text-primary: #ffffff;        /* Texto blanco puro */
+  --text-secondary: #bbbbbb;      /* Texto gris claro */
+  --border-color: #830000;        /* Bordes en rojo oscuro para que combine */
+  
+  --color-success: #10b981;       /* Verde para aprobados */
+  --color-danger: #FF0000;        /* Rojo para denegados */
+  --color-disabled: #444444;
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 1px 2px 0 rgba(131, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(131, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.8);
+  --shadow-lg: 0 10px 15px -3px rgba(131, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.8);
 
-  /* Tipografía */
+  /* Tipografía Mejorada */
   --font-family-base: "Inter", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-family-mono: "Fira Code", ui-monospace, Consolas, monospace;
   
@@ -477,7 +479,7 @@ body {
 .p1-capa-5 { /* Reportes */
   width: 310px;
   height: 310px;
-  background-color: rgba(0, 240, 255, 0.1);
+  background-color: rgba(255, 0, 0, 0.1);
   color: var(--text-primary);
   z-index: 1;
 }
@@ -485,7 +487,7 @@ body {
 .p1-capa-4 { /* Auditoría */
   width: 250px;
   height: 250px;
-  background-color: rgba(0, 240, 255, 0.2);
+  background-color: rgba(255, 0, 0, 0.2);
   color: var(--text-primary);
   z-index: 2;
 }
@@ -493,7 +495,7 @@ body {
 .p1-capa-3 { /* Control de cambio */
   width: 190px;
   height: 190px;
-  background-color: rgba(0, 240, 255, 0.3);
+  background-color: rgba(255, 0, 0, 0.3);
   color: var(--text-primary);
   z-index: 3;
 }
@@ -501,7 +503,7 @@ body {
 .p1-capa-2 { /* Control de versión */
   width: 130px;
   height: 130px;
-  background-color: rgba(0, 240, 255, 0.4);
+  background-color: rgba(255, 0, 0, 0.4);
   color: #ffffff;
   z-index: 4;
 }
@@ -509,7 +511,7 @@ body {
 .p1-capa-1 { /* Identificación */
   width: 70px;
   height: 70px;
-  background-color: rgba(0, 240, 255, 0.5);
+  background-color: rgba(255, 0, 0, 0.5);
   color: #ffffff;
   z-index: 5;
   align-items: center;
@@ -871,4 +873,6 @@ body {
 .nav-list {
   scrollbar-width: none;
 }
+
+
 
