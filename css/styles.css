@@ -86,7 +86,7 @@ body {
 }
 
 .header-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -136,7 +136,10 @@ body {
 
 .nav-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   justify-content: center;
   gap: var(--spacing-xs) var(--spacing-sm);
   list-style: none;
@@ -163,7 +166,7 @@ body {
    ========================================================================== */
 .main-content {
   flex: 1;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding: var(--spacing-xl) var(--spacing-md);
@@ -236,7 +239,7 @@ body {
 }
 
 .footer-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -858,4 +861,14 @@ body {
 
 
 
+
+
+
+
+.nav-list::-webkit-scrollbar {
+  display: none;
+}
+.nav-list {
+  scrollbar-width: none;
+}
 
